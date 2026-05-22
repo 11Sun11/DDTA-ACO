@@ -1,0 +1,641 @@
+MulT_TTE(
+  (seg_embedding_learning): BertForMaskedLM(
+    (bert): BertModel(
+      (embeddings): BertEmbeddings(
+        (word_embeddings): Embedding(27300, 64, padding_idx=27291)
+        (position_embeddings): Embedding(512, 64)
+        (token_type_embeddings): Embedding(2, 64)
+        (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+        (dropout): Dropout(p=0.1, inplace=False)
+      )
+      (encoder): BertEncoder(
+        (layer): ModuleList(
+          (0): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=64, out_features=64, bias=True)
+                (key): Linear(in_features=64, out_features=64, bias=True)
+                (value): Linear(in_features=64, out_features=64, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=64, out_features=64, bias=True)
+                (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=64, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=64, bias=True)
+              (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (1): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=64, out_features=64, bias=True)
+                (key): Linear(in_features=64, out_features=64, bias=True)
+                (value): Linear(in_features=64, out_features=64, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=64, out_features=64, bias=True)
+                (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=64, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=64, bias=True)
+              (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (2): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=64, out_features=64, bias=True)
+                (key): Linear(in_features=64, out_features=64, bias=True)
+                (value): Linear(in_features=64, out_features=64, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=64, out_features=64, bias=True)
+                (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=64, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=64, bias=True)
+              (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (3): BertLayer(
+            (attention): BertAttention(
+              (self): BertSelfAttention(
+                (query): Linear(in_features=64, out_features=64, bias=True)
+                (key): Linear(in_features=64, out_features=64, bias=True)
+                (value): Linear(in_features=64, out_features=64, bias=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+              (output): BertSelfOutput(
+                (dense): Linear(in_features=64, out_features=64, bias=True)
+                (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (intermediate): BertIntermediate(
+              (dense): Linear(in_features=64, out_features=3072, bias=True)
+              (intermediate_act_fn): GELUActivation()
+            )
+            (output): BertOutput(
+              (dense): Linear(in_features=3072, out_features=64, bias=True)
+              (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+        )
+      )
+    )
+    (cls): BertOnlyMLMHead(
+      (predictions): BertLMPredictionHead(
+        (transform): BertPredictionHeadTransform(
+          (dense): Linear(in_features=64, out_features=64, bias=True)
+          (transform_act_fn): GELUActivation()
+          (LayerNorm): LayerNorm((64,), eps=1e-12, elementwise_affine=True)
+        )
+        (decoder): Linear(in_features=64, out_features=27300, bias=True)
+      )
+    )
+  )
+  (highwayembed): Embedding(15, 5, padding_idx=0)
+  (weekembed): Embedding(8, 3)
+  (dateembed): Embedding(367, 10)
+  (timeembed): Embedding(1441, 20)
+  (gpsrep): Linear(in_features=4, out_features=16, bias=True)
+  (timene): Sequential(
+    (0): Linear(in_features=97, out_features=97, bias=True)
+    (1): LeakyReLU(negative_slope=0.01)
+    (2): Linear(in_features=97, out_features=97, bias=True)
+  )
+  (represent): Sequential(
+    (0): Linear(in_features=120, out_features=120, bias=True)
+    (1): LeakyReLU(negative_slope=0.01)
+    (2): Linear(in_features=120, out_features=120, bias=True)
+  )
+  (sequence): LayerNormGRU(
+    (hidden0): ModuleList(
+      (0): LayerNormGRUCell(
+        (ln_i2h): LayerNorm((256,), eps=1e-05, elementwise_affine=False)
+        (ln_h2h): LayerNorm((256,), eps=1e-05, elementwise_affine=False)
+        (ln_cell_1): LayerNorm((128,), eps=1e-05, elementwise_affine=False)
+        (ln_cell_2): LayerNorm((128,), eps=1e-05, elementwise_affine=False)
+        (i2h): Linear(in_features=120, out_features=256, bias=True)
+        (h2h): Linear(in_features=128, out_features=256, bias=True)
+        (h_hat_W): Linear(in_features=120, out_features=128, bias=True)
+        (h_hat_U): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (1): LayerNormGRUCell(
+        (ln_i2h): LayerNorm((256,), eps=1e-05, elementwise_affine=False)
+        (ln_h2h): LayerNorm((256,), eps=1e-05, elementwise_affine=False)
+        (ln_cell_1): LayerNorm((128,), eps=1e-05, elementwise_affine=False)
+        (ln_cell_2): LayerNorm((128,), eps=1e-05, elementwise_affine=False)
+        (i2h): Linear(in_features=128, out_features=256, bias=True)
+        (h2h): Linear(in_features=128, out_features=256, bias=True)
+        (h_hat_W): Linear(in_features=128, out_features=128, bias=True)
+        (h_hat_U): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (input2hid): Linear(in_features=161, out_features=128, bias=True)
+  (decoder): Decoder(
+    (layers): ModuleList(
+      (0): DecoderLayer(
+        (norm_1): Norm()
+        (norm_2): Norm()
+        (norm_3): Norm()
+        (dropout_1): Dropout(p=0.1, inplace=False)
+        (dropout_2): Dropout(p=0.1, inplace=False)
+        (dropout_3): Dropout(p=0.1, inplace=False)
+        (attn_1): MultiHeadAttention(
+          (q_linear): Linear(in_features=128, out_features=128, bias=True)
+          (v_linear): Linear(in_features=128, out_features=128, bias=True)
+          (k_linear): Linear(in_features=128, out_features=128, bias=True)
+          (attn_1): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+          )
+        )
+        (attn_2): MultiHeadAttention(
+          (q_linear): Linear(in_features=128, out_features=128, bias=True)
+          (v_linear): Linear(in_features=128, out_features=128, bias=True)
+          (k_linear): Linear(in_features=128, out_features=128, bias=True)
+          (attn_1): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+          )
+        )
+        (ff): FeedForward(
+          (linear_1): Linear(in_features=128, out_features=1024, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear_2): Linear(in_features=1024, out_features=128, bias=True)
+        )
+      )
+      (1): DecoderLayer(
+        (norm_1): Norm()
+        (norm_2): Norm()
+        (norm_3): Norm()
+        (dropout_1): Dropout(p=0.1, inplace=False)
+        (dropout_2): Dropout(p=0.1, inplace=False)
+        (dropout_3): Dropout(p=0.1, inplace=False)
+        (attn_1): MultiHeadAttention(
+          (q_linear): Linear(in_features=128, out_features=128, bias=True)
+          (v_linear): Linear(in_features=128, out_features=128, bias=True)
+          (k_linear): Linear(in_features=128, out_features=128, bias=True)
+          (attn_1): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+          )
+        )
+        (attn_2): MultiHeadAttention(
+          (q_linear): Linear(in_features=128, out_features=128, bias=True)
+          (v_linear): Linear(in_features=128, out_features=128, bias=True)
+          (k_linear): Linear(in_features=128, out_features=128, bias=True)
+          (attn_1): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+          )
+        )
+        (ff): FeedForward(
+          (linear_1): Linear(in_features=128, out_features=1024, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear_2): Linear(in_features=1024, out_features=128, bias=True)
+        )
+      )
+      (2): DecoderLayer(
+        (norm_1): Norm()
+        (norm_2): Norm()
+        (norm_3): Norm()
+        (dropout_1): Dropout(p=0.1, inplace=False)
+        (dropout_2): Dropout(p=0.1, inplace=False)
+        (dropout_3): Dropout(p=0.1, inplace=False)
+        (attn_1): MultiHeadAttention(
+          (q_linear): Linear(in_features=128, out_features=128, bias=True)
+          (v_linear): Linear(in_features=128, out_features=128, bias=True)
+          (k_linear): Linear(in_features=128, out_features=128, bias=True)
+          (attn_1): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+          )
+        )
+        (attn_2): MultiHeadAttention(
+          (q_linear): Linear(in_features=128, out_features=128, bias=True)
+          (v_linear): Linear(in_features=128, out_features=128, bias=True)
+          (k_linear): Linear(in_features=128, out_features=128, bias=True)
+          (attn_1): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+          )
+        )
+        (ff): FeedForward(
+          (linear_1): Linear(in_features=128, out_features=1024, bias=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (linear_2): Linear(in_features=1024, out_features=128, bias=True)
+        )
+      )
+    )
+    (norm): Norm()
+  )
+  (hid2out): Linear(in_features=128, out_features=1, bias=True)
+)
+
+train epoch: 0, train loss: 977.9386290493438
+{'MAE': 1105.3445, 'MAPE': 0.9083953, 'RMSE': 2650.1135, 'PEARR': -0.5155115126727099, 'PEARP': 0.0}
+1763291990.630331
+
+val epoch: 0, val loss: 2016.7134217652513
+{'MAE': 2183.806, 'MAPE': 2.4955218, 'RMSE': 2681.202, 'PEARR': -0.8745332248170963, 'PEARP': 0.0}
+1763291996.8144908
+
+test epoch: 0, test loss: 2003.3570867478722
+{'MAE': 2163.3098, 'MAPE': 2.508675, 'RMSE': 2663.8044, 'PEARR': -0.8783827203596601, 'PEARP': 0.0}
+1763292006.7932065
+
+train epoch: 1, train loss: 589.2117838564789
+{'MAE': 700.2146, 'MAPE': 0.62501925, 'RMSE': 1490.4167, 'PEARR': -0.5011282803737876, 'PEARP': 0.0}
+1763292182.2586677
+
+val epoch: 1, val loss: 1308.7151207402417
+{'MAE': 1463.2142, 'MAPE': 1.6824595, 'RMSE': 1777.6033, 'PEARR': -0.8692552486391861, 'PEARP': 0.0}
+1763292188.3955963
+
+test epoch: 1, test loss: 1295.3745810398477
+{'MAE': 1447.061, 'MAPE': 1.6899294, 'RMSE': 1762.0194, 'PEARR': -0.8736251073430021, 'PEARP': 0.0}
+1763292198.5357423
+
+train epoch: 2, train loss: 182.04560816678395
+{'MAE': 278.51407, 'MAPE': 0.31395414, 'RMSE': 580.38995, 'PEARR': 0.314389696928678, 'PEARP': 0.0}
+1763292371.4199774
+
+val epoch: 2, val loss: 103.69872240147886
+{'MAE': 197.74995, 'MAPE': 0.23724134, 'RMSE': 291.38855, 'PEARR': 0.8791550364429634, 'PEARP': 0.0}
+1763292377.5559072
+
+test epoch: 2, test loss: 99.10207136671566
+{'MAE': 192.59189, 'MAPE': 0.23633648, 'RMSE': 280.70813, 'PEARR': 0.882159394590485, 'PEARP': 0.0}
+1763292387.5543418
+
+train epoch: 3, train loss: 77.81819949117234
+{'MAE': 168.91107, 'MAPE': 0.23808262, 'RMSE': 239.89648, 'PEARR': 0.876208004950943, 'PEARP': 0.0}
+1763292562.0389502
+
+val epoch: 3, val loss: 135.9168605233022
+{'MAE': 242.08789, 'MAPE': 0.35324216, 'RMSE': 331.80838, 'PEARR': 0.8817996063125461, 'PEARP': 0.0}
+1763292568.1884184
+
+test epoch: 3, test loss: 137.13989438186735
+{'MAE': 242.685, 'MAPE': 0.35988826, 'RMSE': 334.90762, 'PEARR': 0.8846581901803812, 'PEARP': 0.0}
+1763292578.1361954
+
+train epoch: 4, train loss: 78.79888691280969
+{'MAE': 169.56824, 'MAPE': 0.23710503, 'RMSE': 243.54785, 'PEARR': 0.8731896472157381, 'PEARP': 0.0}
+1763292751.8745728
+
+val epoch: 4, val loss: 103.15059958692669
+{'MAE': 199.93861, 'MAPE': 0.28117102, 'RMSE': 283.65057, 'PEARR': 0.8830319792825937, 'PEARP': 0.0}
+1763292758.0070024
+
+test epoch: 4, test loss: 103.63379997719086
+{'MAE': 199.57619, 'MAPE': 0.28581738, 'RMSE': 284.95517, 'PEARR': 0.885601568049774, 'PEARP': 0.0}
+1763292767.949862
+
+train epoch: 5, train loss: 77.67368029775544
+{'MAE': 168.0711, 'MAPE': 0.23525982, 'RMSE': 241.83685, 'PEARR': 0.8758302634869354, 'PEARP': 0.0}
+1763292939.2101502
+
+val epoch: 5, val loss: 128.88577314739024
+{'MAE': 231.2121, 'MAPE': 0.32454994, 'RMSE': 329.78586, 'PEARR': 0.8833129924053599, 'PEARP': 0.0}
+1763292945.3260617
+
+test epoch: 5, test loss: 130.4351439333094
+{'MAE': 232.05652, 'MAPE': 0.33117583, 'RMSE': 333.14374, 'PEARR': 0.8859358298950123, 'PEARP': 0.0}
+1763292955.2248578
+
+train epoch: 6, train loss: 85.1588207941085
+{'MAE': 175.94742, 'MAPE': 0.24043019, 'RMSE': 257.97577, 'PEARR': 0.876448702276257, 'PEARP': 0.0}
+1763293128.831616
+
+val epoch: 6, val loss: 103.34759935960679
+{'MAE': 200.54027, 'MAPE': 0.28421643, 'RMSE': 283.66556, 'PEARR': 0.8850440943085578, 'PEARP': 0.0}
+1763293134.9894257
+
+test epoch: 6, test loss: 104.02245732489105
+{'MAE': 200.40196, 'MAPE': 0.28946188, 'RMSE': 285.36798, 'PEARR': 0.8873578106485835, 'PEARP': 0.0}
+1763293144.928513
+
+train epoch: 7, train loss: 79.97226594886284
+{'MAE': 170.21498, 'MAPE': 0.23576063, 'RMSE': 245.65154, 'PEARR': 0.8800947402763386, 'PEARP': 0.0}
+1763293318.3196445
+
+val epoch: 7, val loss: 87.01273550428209
+{'MAE': 180.65907, 'MAPE': 0.257496, 'RMSE': 254.04524, 'PEARR': 0.8856584995938237, 'PEARP': 0.0}
+1763293324.4357858
+
+test epoch: 7, test loss: 86.92863386338489
+{'MAE': 180.0836, 'MAPE': 0.26208797, 'RMSE': 253.7205, 'PEARR': 0.8878976100062599, 'PEARP': 0.0}
+1763293334.506896
+
+train epoch: 8, train loss: 78.38139428294204
+{'MAE': 168.34969, 'MAPE': 0.2339064, 'RMSE': 242.49608, 'PEARR': 0.8810863916896792, 'PEARP': 0.0}
+1763293485.5756376
+
+val epoch: 8, val loss: 83.72210348320759
+{'MAE': 176.79913, 'MAPE': 0.25367004, 'RMSE': 247.74127, 'PEARR': 0.8862478688413193, 'PEARP': 0.0}
+1763293491.7717788
+
+test epoch: 8, test loss: 83.48284528557915
+{'MAE': 176.27118, 'MAPE': 0.2582768, 'RMSE': 246.86948, 'PEARR': 0.8884476651522142, 'PEARP': 0.0}
+1763293501.8403802
+
+train epoch: 9, train loss: 76.47336318102339
+{'MAE': 166.17366, 'MAPE': 0.2320458, 'RMSE': 238.03537, 'PEARR': 0.8831738622348331, 'PEARP': 0.0}
+1763293676.1356015
+
+val epoch: 9, val loss: 82.07182416887522
+{'MAE': 174.41888, 'MAPE': 0.24827704, 'RMSE': 245.01855, 'PEARR': 0.8869101960102005, 'PEARP': 0.0}
+1763293682.305253
+
+test epoch: 9, test loss: 81.74833459240014
+{'MAE': 173.8574, 'MAPE': 0.25273553, 'RMSE': 243.91173, 'PEARR': 0.8889681356706527, 'PEARP': 0.0}
+1763293692.3876743
+
+train epoch: 10, train loss: 76.02092848984574
+{'MAE': 165.63226, 'MAPE': 0.2316461, 'RMSE': 237.21056, 'PEARR': 0.8841354025965802, 'PEARP': 0.0}
+1763293865.5623715
+
+val epoch: 10, val loss: 79.43038034105425
+{'MAE': 171.42957, 'MAPE': 0.24667795, 'RMSE': 239.61926, 'PEARR': 0.8873011361383322, 'PEARP': 0.0}
+1763293871.7419777
+
+test epoch: 10, test loss: 78.95549384405287
+{'MAE': 170.8126, 'MAPE': 0.2510451, 'RMSE': 237.93274, 'PEARR': 0.8892694233559649, 'PEARP': 0.0}
+1763293881.7519202
+
+train epoch: 11, train loss: 73.88590410360473
+{'MAE': 163.27368, 'MAPE': 0.22963697, 'RMSE': 232.47571, 'PEARR': 0.8862699811519394, 'PEARP': 0.0}
+1763294038.3954632
+
+val epoch: 11, val loss: 82.32388513102012
+{'MAE': 174.7798, 'MAPE': 0.24886926, 'RMSE': 245.4768, 'PEARR': 0.8885388212807313, 'PEARP': 0.0}
+1763294044.5179007
+
+test epoch: 11, test loss: 82.28852207676088
+{'MAE': 174.48042, 'MAPE': 0.25361484, 'RMSE': 245.10538, 'PEARR': 0.8902562263430716, 'PEARP': 0.0}
+1763294054.4139698
+
+train epoch: 12, train loss: 72.56864953750625
+{'MAE': 161.72722, 'MAPE': 0.22797374, 'RMSE': 229.73361, 'PEARR': 0.8880448006889625, 'PEARP': 0.0}
+1763294224.6716099
+
+val epoch: 12, val loss: 76.63968541557627
+{'MAE': 167.68417, 'MAPE': 0.23805939, 'RMSE': 234.52278, 'PEARR': 0.8895409107441046, 'PEARP': 0.0}
+1763294230.830899
+
+test epoch: 12, test loss: 76.09420395890288
+{'MAE': 167.03966, 'MAPE': 0.24223553, 'RMSE': 232.50716, 'PEARR': 0.8911844092793824, 'PEARP': 0.0}
+1763294240.893286
+
+train epoch: 13, train loss: 71.5136199671118
+{'MAE': 160.11432, 'MAPE': 0.22521344, 'RMSE': 228.16017, 'PEARR': 0.8903389845784391, 'PEARP': 0.0}
+1763294412.7156928
+
+val epoch: 13, val loss: 71.95221593419335
+{'MAE': 161.59772, 'MAPE': 0.22967343, 'RMSE': 226.04053, 'PEARR': 0.8946129840386405, 'PEARP': 0.0}
+1763294418.8552155
+
+test epoch: 13, test loss: 71.97959753732599
+{'MAE': 162.18788, 'MAPE': 0.23556392, 'RMSE': 224.77965, 'PEARR': 0.8946692252310677, 'PEARP': 0.0}
+1763294428.895773
+
+train epoch: 14, train loss: 69.7178391782636
+{'MAE': 158.11116, 'MAPE': 0.2237793, 'RMSE': 223.94934, 'PEARR': 0.8931414064461325, 'PEARP': 0.0}
+1763294603.965855
+
+val epoch: 14, val loss: 71.58800190547821
+{'MAE': 161.41136, 'MAPE': 0.23071016, 'RMSE': 225.21619, 'PEARR': 0.8952847820687705, 'PEARP': 0.0}
+1763294610.1244352
+
+test epoch: 14, test loss: 71.44187180640245
+{'MAE': 161.32765, 'MAPE': 0.23531102, 'RMSE': 223.99767, 'PEARR': 0.8951998434348948, 'PEARP': 0.0}
+1763294620.1441326
+
+train epoch: 15, train loss: 68.84356248288373
+{'MAE': 156.83446, 'MAPE': 0.22172971, 'RMSE': 222.60612, 'PEARR': 0.8947346935723572, 'PEARP': 0.0}
+1763294794.7349253
+
+val epoch: 15, val loss: 73.91038802402733
+{'MAE': 164.31157, 'MAPE': 0.23609209, 'RMSE': 229.37198, 'PEARR': 0.8970098934615954, 'PEARP': 0.0}
+1763294800.894027
+
+test epoch: 15, test loss: 75.20816562970613
+{'MAE': 166.13727, 'MAPE': 0.24276847, 'RMSE': 231.5647, 'PEARR': 0.8955342046635439, 'PEARP': 0.0}
+1763294810.849991
+
+train epoch: 16, train loss: 67.65883581215382
+{'MAE': 155.34918, 'MAPE': 0.22002712, 'RMSE': 220.36319, 'PEARR': 0.8967283389950835, 'PEARP': 0.0}
+1763294983.6430085
+
+val epoch: 16, val loss: 73.17863362464642
+{'MAE': 163.69073, 'MAPE': 0.23678179, 'RMSE': 227.81813, 'PEARR': 0.8975401244619067, 'PEARP': 0.0}
+1763294989.8347666
+
+test epoch: 16, test loss: 74.47849029574323
+{'MAE': 165.27765, 'MAPE': 0.24354242, 'RMSE': 229.76472, 'PEARR': 0.8962576444930432, 'PEARP': 0.0}
+1763294999.8536277
+
+train epoch: 17, train loss: 66.66641519827748
+{'MAE': 154.05876, 'MAPE': 0.21845876, 'RMSE': 218.25519, 'PEARR': 0.8986825488658332, 'PEARP': 0.0}
+1763295163.1323304
+
+val epoch: 17, val loss: 69.08812229735028
+{'MAE': 158.34431, 'MAPE': 0.22905493, 'RMSE': 220.93773, 'PEARR': 0.8983208819786306, 'PEARP': 0.0}
+1763295169.2861125
+
+test epoch: 17, test loss: 69.45182149254718
+{'MAE': 159.14465, 'MAPE': 0.23511253, 'RMSE': 220.28719, 'PEARR': 0.897133634100642, 'PEARP': 0.0}
+1763295179.3174808
+
+train epoch: 18, train loss: 66.30000019907543
+{'MAE': 153.66832, 'MAPE': 0.21811716, 'RMSE': 217.60599, 'PEARR': 0.8994131383385566, 'PEARP': 0.0}
+1763295352.6775687
+
+val epoch: 18, val loss: 68.61197585415422
+{'MAE': 157.8123, 'MAPE': 0.22951002, 'RMSE': 220.3303, 'PEARR': 0.89890067027208, 'PEARP': 0.0}
+1763295358.8238873
+
+test epoch: 18, test loss: 68.75454277632349
+{'MAE': 158.24477, 'MAPE': 0.23511972, 'RMSE': 219.02821, 'PEARR': 0.8979042363841124, 'PEARP': 0.0}
+1763295368.9237876
+
+train epoch: 19, train loss: 65.93248951781987
+{'MAE': 153.15134, 'MAPE': 0.21736157, 'RMSE': 216.7923, 'PEARR': 0.9001683617043703, 'PEARP': 0.0}
+1763295541.4677708
+
+val epoch: 19, val loss: 69.11708881089186
+{'MAE': 158.54823, 'MAPE': 0.2308933, 'RMSE': 220.61482, 'PEARR': 0.8993639371369668, 'PEARP': 0.0}
+1763295547.6268387
+
+test epoch: 19, test loss: 69.97659334937448
+{'MAE': 159.87297, 'MAPE': 0.23730443, 'RMSE': 220.955, 'PEARR': 0.8978850282964503, 'PEARP': 0.0}
+1763295557.5977666
+
+train epoch: 20, train loss: 65.81665639854518
+{'MAE': 152.99928, 'MAPE': 0.21721007, 'RMSE': 216.52417, 'PEARR': 0.9003749338730254, 'PEARP': 0.0}
+1763295726.8932025
+
+val epoch: 20, val loss: 68.0382155375879
+{'MAE': 156.9769, 'MAPE': 0.2269384, 'RMSE': 219.33879, 'PEARR': 0.8997321235776469, 'PEARP': 0.0}
+1763295733.0290065
+
+test epoch: 20, test loss: 68.43377976092872
+{'MAE': 157.61783, 'MAPE': 0.23257706, 'RMSE': 218.55069, 'PEARR': 0.8982964732536158, 'PEARP': 0.0}
+1763295743.0040271
+
+train epoch: 21, train loss: 65.6277550405017
+{'MAE': 152.76549, 'MAPE': 0.21701662, 'RMSE': 216.20514, 'PEARR': 0.9007395296766136, 'PEARP': 0.0}
+1763295915.454714
+
+val epoch: 21, val loss: 67.76263924779072
+{'MAE': 156.64032, 'MAPE': 0.22630152, 'RMSE': 218.94127, 'PEARR': 0.9001462670196321, 'PEARP': 0.0}
+1763295921.6407506
+
+test epoch: 21, test loss: 68.13775116445916
+{'MAE': 157.1932, 'MAPE': 0.23170272, 'RMSE': 218.12817, 'PEARR': 0.8985826754090582, 'PEARP': 0.0}
+1763295931.669277
+
+train epoch: 22, train loss: 65.43800645400059
+{'MAE': 152.49683, 'MAPE': 0.21658626, 'RMSE': 215.84097, 'PEARR': 0.9010563316652784, 'PEARP': 0.0}
+1763296106.2778978
+
+val epoch: 22, val loss: 67.9208440595627
+{'MAE': 156.96648, 'MAPE': 0.22662161, 'RMSE': 218.79367, 'PEARR': 0.9002539200862765, 'PEARP': 0.0}
+1763296112.4121642
+
+test epoch: 22, test loss: 68.0456408994763
+{'MAE': 157.15288, 'MAPE': 0.2313375, 'RMSE': 217.77782, 'PEARR': 0.8991161907788315, 'PEARP': 0.0}
+1763296122.3156972
+
+train epoch: 23, train loss: 65.68691650892649
+{'MAE': 152.87941, 'MAPE': 0.21713401, 'RMSE': 216.21317, 'PEARR': 0.9007718705161087, 'PEARP': 0.0}
+1763296296.8525283
+
+val epoch: 23, val loss: 68.42345467351423
+{'MAE': 157.81764, 'MAPE': 0.22941735, 'RMSE': 219.17552, 'PEARR': 0.9002768593743897, 'PEARP': 0.0}
+1763296303.0382576
+
+test epoch: 23, test loss: 68.92475334361562
+{'MAE': 158.5836, 'MAPE': 0.2346537, 'RMSE': 219.04314, 'PEARR': 0.8988081104125614, 'PEARP': 0.0}
+1763296313.0176823
+
+train epoch: 24, train loss: 65.43069940969883
+{'MAE': 152.54504, 'MAPE': 0.21705164, 'RMSE': 215.62512, 'PEARR': 0.9012838417555681, 'PEARP': 0.0}
+1763296486.074303
+
+val epoch: 24, val loss: 67.92771722896195
+{'MAE': 157.05038, 'MAPE': 0.22742584, 'RMSE': 218.86075, 'PEARR': 0.9002068124873666, 'PEARP': 0.0}
+1763296492.258077
+
+test epoch: 24, test loss: 68.14559364398914
+{'MAE': 157.43867, 'MAPE': 0.23226963, 'RMSE': 218.01834, 'PEARR': 0.8987746714632943, 'PEARP': 0.0}
+1763296502.2221978
+
+train epoch: 25, train loss: 65.3586523985223
+{'MAE': 152.42569, 'MAPE': 0.21669805, 'RMSE': 215.63983, 'PEARR': 0.9013725444568842, 'PEARP': 0.0}
+1763296673.5289137
+
+val epoch: 25, val loss: 68.00295056136328
+{'MAE': 157.19708, 'MAPE': 0.22785337, 'RMSE': 218.66707, 'PEARR': 0.9004407632723463, 'PEARP': 0.0}
+1763296679.6970139
+
+test epoch: 25, test loss: 68.40871846494721
+{'MAE': 157.80148, 'MAPE': 0.23290622, 'RMSE': 218.35197, 'PEARR': 0.8987927984336639, 'PEARP': 0.0}
+1763296689.6516068
+
+train epoch: 26, train loss: 65.25504497063105
+{'MAE': 152.26743, 'MAPE': 0.21636651, 'RMSE': 215.40079, 'PEARR': 0.9015521781845606, 'PEARP': 0.0}
+1763296860.0040784
+
+val epoch: 26, val loss: 68.2432167310682
+{'MAE': 157.6929, 'MAPE': 0.23006971, 'RMSE': 218.89175, 'PEARR': 0.900431514989203, 'PEARP': 0.0}
+1763296866.147952
+
+test epoch: 26, test loss: 68.74448283258508
+{'MAE': 158.44566, 'MAPE': 0.23535456, 'RMSE': 218.75789, 'PEARR': 0.898839250764796, 'PEARP': 0.0}
+1763296876.089536
+
+train epoch: 27, train loss: 65.22016503211817
+{'MAE': 152.26707, 'MAPE': 0.21671446, 'RMSE': 215.30556, 'PEARR': 0.9016317453681728, 'PEARP': 0.0}
+1763297046.328417
+
+val epoch: 27, val loss: 67.93402515360388
+{'MAE': 157.11699, 'MAPE': 0.2279906, 'RMSE': 218.64511, 'PEARR': 0.9004424600076181, 'PEARP': 0.0}
+1763297052.486774
+
+test epoch: 27, test loss: 68.35350013305674
+{'MAE': 157.76184, 'MAPE': 0.2331295, 'RMSE': 218.26581, 'PEARR': 0.8987759223546135, 'PEARP': 0.0}
+1763297062.4539142
+
+train epoch: 28, train loss: 65.18160116549883
+{'MAE': 152.20555, 'MAPE': 0.21642908, 'RMSE': 215.25824, 'PEARR': 0.9017009713262198, 'PEARP': 0.0}
+1763297232.517312
+
+val epoch: 28, val loss: 67.96488390334102
+{'MAE': 157.15773, 'MAPE': 0.22805855, 'RMSE': 218.64879, 'PEARR': 0.9004626522209598, 'PEARP': 0.0}
+1763297238.6498885
+
+test epoch: 28, test loss: 68.4076050217191
+{'MAE': 157.8465, 'MAPE': 0.23324513, 'RMSE': 218.32133, 'PEARR': 0.8988146916751363, 'PEARP': 0.0}
+1763297248.5702994
+
+train epoch: 29, train loss: 65.14944455081866
+{'MAE': 152.12317, 'MAPE': 0.21621868, 'RMSE': 215.18169, 'PEARR': 0.9017612038686611, 'PEARP': 0.0}
+1763297421.5790784
+
+val epoch: 29, val loss: 68.03030381390109
+{'MAE': 157.2977, 'MAPE': 0.22860953, 'RMSE': 218.69345, 'PEARR': 0.9004635810576156, 'PEARP': 0.0}
+1763297427.7555
+
+test epoch: 29, test loss: 68.4827943439498
+{'MAE': 158.00023, 'MAPE': 0.23382844, 'RMSE': 218.40353, 'PEARR': 0.8988483556156757, 'PEARP': 0.0}
+1763297437.6705847
+
+train epoch: 30, train loss: 65.15602458060383
+{'MAE': 152.13803, 'MAPE': 0.21639751, 'RMSE': 215.19072, 'PEARR': 0.9017359793444086, 'PEARP': 0.0}
+1763297608.8804674
+
+val epoch: 30, val loss: 68.03346623201976
+{'MAE': 157.30194, 'MAPE': 0.22862378, 'RMSE': 218.6929, 'PEARR': 0.9004688517858368, 'PEARP': 0.0}
+1763297615.0052269
+
+test epoch: 30, test loss: 68.48782475330339
+{'MAE': 158.007, 'MAPE': 0.2338444, 'RMSE': 218.40483, 'PEARR': 0.8988607838600842, 'PEARP': 0.0}
+1763297624.880298
+
+train epoch: 31, train loss: 65.1883870779626
+{'MAE': 152.20937, 'MAPE': 0.21641342, 'RMSE': 215.22723, 'PEARR': 0.9017077135828584, 'PEARP': 0.0}
+1763297798.7057395
+
+val epoch: 31, val loss: 68.00875514188776
+{'MAE': 157.25453, 'MAPE': 0.22845472, 'RMSE': 218.67448, 'PEARR': 0.9004682843071896, 'PEARP': 0.0}
+1763297804.8526227
+
+test epoch: 31, test loss: 68.45197133767336
+{'MAE': 157.9486, 'MAPE': 0.23366435, 'RMSE': 218.35492, 'PEARR': 0.89886239741128, 'PEARP': 0.0}
+1763297814.75581
+

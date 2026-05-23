@@ -1,4 +1,6 @@
 # DDTA-ACO
+Traffic-Aware Charge-Route Planning of Electric Vehicles using Data-Driven Ant Colony Optimization
+
 
 一个用于电动汽车路径规划与充电站决策的蚁群优化（ACO）研究代码仓库，集成了基于行程时间估计（TTE）与多种充电策略的仿真、评估与对比实验脚本。
 
